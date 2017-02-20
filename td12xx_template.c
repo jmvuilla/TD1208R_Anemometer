@@ -73,7 +73,7 @@ void TD_USER_Setup(void){
 		    .mode       = pcntModeOvsSingle,  /* clocked by LFACLK */
 		    .counter    = 0,                  /* Set initial value to 0 */
 		    .top        = 255,                 /* Set top to max value */
-		    .negEdge    = true,              /* positive edges */
+		    .negEdge    = true,              /* negative edges */
 		    .countDown  = false,              /* up count */
 		    .filter     = true,               /* filter enabled */
 		  };
@@ -88,7 +88,7 @@ void TD_USER_Setup(void){
 		TD_RTC_Delay(T1S);
 	}
 
-	// Start 5s timer, which will trigger Every5SFunction every minute
+	// Start 5s timer, which will trigger Every5SFunction 5 seconds
 	Every5STimer = TD_SCHEDULER_AppendIrq(5, 0 , 0, TD_SCHEDULER_INFINITE, Every5SFunction, 0);
 }
 
