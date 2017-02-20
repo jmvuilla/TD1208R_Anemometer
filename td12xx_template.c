@@ -88,7 +88,7 @@ void TD_USER_Setup(void){
 		TD_RTC_Delay(T1S);
 	}
 
-	// Start 60s timer, which will trigger EveryMNFunction every minute
+	// Start 5s timer, which will trigger Every5SFunction every minute
 	Every5STimer = TD_SCHEDULER_AppendIrq(5, 0 , 0, TD_SCHEDULER_INFINITE, Every5SFunction, 0);
 }
 
